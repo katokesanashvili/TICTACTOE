@@ -29,8 +29,8 @@ abstract class MainActivity : AppCompatActivity(), android.view.View.OnClickList
     private lateinit var xx1:TextView
     private lateinit var yy2:TextView
     private var activeplayer = 1
-    private var pirvelivar= ArrayList<Int>()
-    private var meorevar= ArrayList<Int>()
+    private var pirveli= ArrayList<Int>()
+    private var meore= ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,8 +99,8 @@ abstract class MainActivity : AppCompatActivity(), android.view.View.OnClickList
             button7.isEnabled=true
             button8.isEnabled=true
             button9.isEnabled=true
-            pirvelivar.clear()
-            meorevar.clear()
+            pirveli.clear()
+            meore.clear()
 
         }
         }
@@ -127,12 +127,12 @@ abstract class MainActivity : AppCompatActivity(), android.view.View.OnClickList
         if (activeplayer==1){
             clikedView.text="x"
             activeplayer=2
-            pirvelivar.add(buttonNumber)
+            pirveliv.add(buttonNumber)
             clikedView.setBackgroundColor(Color.GREEN)
         }else if (activeplayer==2){
             clikedView.text="O"
             activeplayer=1
-            meorevar.add(buttonNumber)
+            meore.add(buttonNumber)
             clikedView.setBackgroundColor(Color.RED)
 
         }
@@ -143,66 +143,66 @@ abstract class MainActivity : AppCompatActivity(), android.view.View.OnClickList
     private  fun check(){
 
         var winner =0
-        if (pirvelivar.contains(1)&&pirvelivar.contains(2)&&pirvelivar.contains(3)){
+        if (pirveli.contains(1)&&pirveli.contains(2)&&pirveli.contains(3)){
             winner=1
         }
-        if (pirvelivar.contains(4)&&pirvelivar.contains(5)&&pirvelivar.contains(6)){
+        if (pirveli.contains(4)&&pirveli.contains(5)&&pirveli.contains(6)){
             winner=1
         }
-        if (pirvelivar.contains(7)&&pirvelivar.contains(8)&&pirvelivar.contains(9)){
+        if (pirveli.contains(7)&&pirveli.contains(8)&&pirveli.contains(9)){
             winner=1
         }
-        if (pirvelivar.contains(1)&&pirvelivar.contains(5)&&pirvelivar.contains(9)){
+        if (pirveli.contains(1)&&pirveli.contains(5)&&pirveli.contains(9)){
             winner=1
         }
-        if (pirvelivar.contains(3)&&pirvelivar.contains(5)&&pirvelivar.contains(7)){
+        if (pirveli.contains(3)&&pirveli.contains(5)&&pirveli.contains(7)){
             winner=1
         }
-        if (pirvelivar.contains(2)&&pirvelivar.contains(5)&&pirvelivar.contains(8)){
+        if (pirveli.contains(2)&&pirveli.contains(5)&&pirveli.contains(8)){
             winner=1
         }
-        if (pirvelivar.contains(1)&&pirvelivar.contains(4)&&pirvelivar.contains(7)){
+        if (pirveli.contains(1)&&pirveli.contains(4)&&pirveli.contains(7)){
             winner=1
         }
-        if (pirvelivar.contains(3)&&pirvelivar.contains(6)&&pirvelivar.contains(9)){
+        if (pirveli.contains(3)&&pirveli.contains(6)&&pirveli.contains(9)){
             winner=1
         }
-        if (meorevar.contains(1)&&meorevar.contains(2)&&meorevar.contains(3)){
+        if (meore.contains(1)&&meore.contains(2)&&meore.contains(3)){
             winner=2
         }
-        if (meorevar.contains(4)&&meorevar.contains(5)&&meorevar.contains(6)){
+        if (meore.contains(4)&&meore.contains(5)&&meore.contains(6)){
             winner=2
         }
-        if (meorevar.contains(7)&&meorevar.contains(8)&&meorevar.contains(9)){
+        if (meore.contains(7)&&meore.contains(8)&&meore.contains(9)){
             winner=2
         }
-        if (meorevar.contains(1)&&meorevar.contains(5)&&meorevar.contains(9)){
+        if (meore.contains(1)&&meore.contains(5)&&meore.contains(9)){
             winner=2
         }
-        if (meorevar.contains(3)&&meorevar.contains(5)&&meorevar.contains(7)){
+        if (meore.contains(3)&&meore.contains(5)&&meore.contains(7)){
             winner=2
         }
-        if (meorevar.contains(2)&&meorevar.contains(5)&&meorevar.contains(8)){
+        if (meore.contains(2)&&meore.contains(5)&&meore.contains(8)){
             winner=2
         }
-        if (meorevar.contains(1)&&meorevar.contains(4)&&meorevar.contains(7)){
+        if (meore.contains(1)&&meore.contains(4)&&meore.contains(7)){
             winner=2
         }
-        if (meorevar.contains(3)&&meorevar.contains(6)&&meorevar.contains(9)){
+        if (meore.contains(3)&&meore.contains(6)&&meore.contains(9)){
             winner=2
         }
         if (winner==1){
-            Toast.makeText(this, "`gilocav $player1", Toast.LENGTH_SHORT).show()
-            uewangarishi1+=1
+            Toast.makeText(this, "moigo $player1", Toast.LENGTH_SHORT).show()
+            boloangarishi1+=1
             activeplayer=1
         }else if (winner==2){
-            Toast.makeText(this, "gilocav $player2", Toast.LENGTH_SHORT).show()
-            uewangarishi2+=1
+            Toast.makeText(this, "moigo $player2", Toast.LENGTH_SHORT).show()
+            boloangarishi2+=1
             activeplayer=2
-        }else if(pirvelivar.size+meorevar.size==9){
-            Toast.makeText(this, "megobrtobam gaimarjva", Toast.LENGTH_LONG).show()
-            pirvelivar.clear()
-            meorevar.clear()
+        }else if(pirveli.size+meore.size==9){
+            Toast.makeText(this, "frea", Toast.LENGTH_LONG).show()
+            pirveli.clear()
+            meore.clear()
         }
         if (winner>0){
             button1.isEnabled=false
@@ -214,10 +214,10 @@ abstract class MainActivity : AppCompatActivity(), android.view.View.OnClickList
             button7.isEnabled=false
             button8.isEnabled=false
             button9.isEnabled=false
-            angarshi1.text=uewangarishi1.toString()
-            angarishi2.text=uewangarishi2.toString()
-            pirvelivar.clear()
-            meorevar.clear()
+            angarshi1.text=boloangarishi1.toString()
+            angarishi2.text=boloangarishi2.toString()
+            pirveli.clear()
+            meore.clear()
 
         }
 
